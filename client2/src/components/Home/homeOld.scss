@@ -1,0 +1,313 @@
+@import '../styles/variables.scss';
+
+/* ------------------------------------------------------------ *\
+	List
+\* ------------------------------------------------------------ */
+
+.list-categories {
+    & {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        color: $onyx;
+    }
+    .list-group-item {
+        & {
+            border-radius: 0;
+            flex: 0 1 33.33%;
+            cursor: pointer;
+        }
+        a {
+            display: flex;
+            align-items: center;
+            
+        }
+        .item-name {
+            margin-left: 5px;
+        }
+    }
+}
+@media #{$tablet-portrait} {
+    .list-categories {
+        .list-group-item {
+            flex: 0 1 50%;
+        }
+    }
+}
+
+@media #{$mobile} {
+    .list-categories {
+        .list-group-item {
+            flex: 0 1 100%;
+        }
+    }
+}
+
+/* ------------------------------------------------------------ *\
+	Posts List
+\* ------------------------------------------------------------ */
+
+.post-list {
+    & {
+        padding: 0 15px;
+        width: 100%;
+    }
+    .post__inner {
+        display: flex;
+        margin-bottom: 2rem;
+        background: #fff;
+        box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    }
+    
+    .post__meta {
+        display: none;
+    }
+
+    .post__head {
+        position: relative;
+        min-height: 200px;
+        flex: 0 1 280px;
+        max-width: 280px;
+    }
+
+    .post__body {
+        flex: 2;
+
+        .post__title {
+            margin-bottom: .4rem;
+            color: #504e70;
+            font-weight: 600;
+        }
+
+        .post__content {
+            padding: 2rem;
+            
+        }
+        
+        .post__foot {
+            padding: 1rem 2rem;
+            border-top: 1px solid #e8ebf3;
+            
+            .post__price {
+                font-size: 18px;
+                font-weight: 600;
+            }
+        }
+    }
+
+    &--grid {
+        flex: 0 1 33.33%;
+        max-width: 33.33%;
+
+        .post__head {
+            flex: 1;
+            max-width: 100%;
+        }
+        .post__description {
+            margin-bottom: 1rem;
+        }
+        .post__meta {
+            display: flex;
+            
+            p {
+                margin-bottom: 0;
+            }
+            
+            .post__date,
+            .post__location {
+                display: flex;
+                align-items: center;
+            }
+           
+            .post__location {
+                margin-right: 10px
+            }
+
+            .material-icons {
+                font-size: 13px;
+                margin-right: 5px;
+            }
+        }
+
+        .post__inner {
+            display: block;
+        }    
+    }
+}
+
+
+@media #{$tablet-portrait} {
+    .post-list {
+        &--grid {
+            flex: 0 1 50%;
+            max-width: 50%; 
+        }
+    }
+}
+
+
+@media #{$mobile} {
+    .post-list {
+        &--grid {
+            flex: 1;
+            max-width: 100%;
+        }
+        .post__inner {
+            display: block;
+        }
+        .post__body {
+            .post__content{
+                padding: 1rem;
+            }
+            .post__foot {
+                padding: 1rem;
+            }
+        }
+        .post__head {
+            max-width: 100%;
+            flex: 0 1 100%;
+        }
+    }
+}
+
+
+@media #{$mobile-small} {
+    .post-list {
+        .post__inner {
+            display: block;
+        }
+        .post__body {
+            .post__title {
+                font-size: 16px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+/* ------------------------------------------------------------ *\
+    List Mobile Apps
+\* ------------------------------------------------------------ */
+
+
+.list-mobile-apps {
+    li a {
+        img {
+            max-width: 150px;
+        }
+    }
+}
+
+
+/* ------------------------------------------------------------ *\
+    List Contact Boxes
+\* ------------------------------------------------------------ */
+
+
+.list-contact-boxes {
+    & {
+        list-style: none;
+    }
+    li {
+        margin-bottom: 1rem;
+    }
+}
+/* ------------------------------------------------------------ *\
+    List Contacts
+\* ------------------------------------------------------------ */
+
+.list-contacts {
+    li a {
+        & {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+        .material-icons {
+            margin-right: 5px;
+        } 
+    }
+}
+
+/* ------------------------------------------------------------ *\
+    List Socials
+\* ------------------------------------------------------------ */
+
+.list-socials {
+    & {
+        padding: .5rem 0;
+    }
+    a {
+        transition: .4s;
+        
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    
+    li { 
+        margin: 0 5px;
+    }
+}
+
+/* ------------------------------------------------------------ *\
+    List Login Links
+\* ------------------------------------------------------------ */
+
+.list-login-links {
+    & {
+        text-align: center;
+        padding: 1rem 0;
+    }
+    li {
+        list-style: none;
+        margin-bottom: 5px;
+    }
+}
+/* ------------------------------------------------------------ *\
+    List Socials
+\* ------------------------------------------------------------ */
+.list-socials {
+    & {
+        margin-top: 1rem;
+    }
+    li {
+        list-style: none;
+    }
+}
+
+/* ------------------------------------------------------------ *\
+    List Terms
+\* ------------------------------------------------------------ */
+
+.list-terms {
+    li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .material-icons {
+        margin-right: 4px; 
+    }
+}
+
+/* ------------------------------------------------------------ *\
+    List User Chat
+\* ------------------------------------------------------------ */
+.list-user-message {
+    & {
+        list-style: none;
+        overflow-y: auto;
+    }
+    li {
+        padding: 10px;
+    }
+    li.active,
+    li:hover {
+        background-color: #F4F6F7;
+        cursor: pointer;
+    }
+    li ~ li {
+        border-top: 1px solid #EDF0F2;
+    }    
+}

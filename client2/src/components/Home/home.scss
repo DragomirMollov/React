@@ -1,0 +1,33 @@
+.list-categories {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .list-group-item {
+    display: table-row;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .list-group-item:last-child {
+    border-bottom: none;
+  }
+  
+  .list-group-item i,
+  .list-group-item .item-name {
+    display: table-cell;
+    padding: 10px;
+    vertical-align: middle;
+  }
+  
+  .list-group-item i {
+    font-size: 24px;
+    width: 50px;
+    text-align: center;
+  }
+  
+  .list-group-item .item-name {
+    font-size: 16px;
+  }
+  

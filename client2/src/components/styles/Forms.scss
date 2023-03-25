@@ -1,0 +1,151 @@
+@import '../styles/variables.scss';
+
+/* ------------------------------------------------------------ *\
+	Form Add
+\* ------------------------------------------------------------ */
+
+.form-add {
+    .form-actions {
+        margin-top: 1rem;
+    }
+}
+
+/* ------------------------------------------------------------ *\
+	Form Subscribe
+\* ------------------------------------------------------------ */
+
+.form-subscribe {
+    .form__control {
+        & {
+            display: flex;
+        }
+        input {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .btn {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+}
+
+/* ------------------------------------------------------------ *\
+	Form Auth
+\* ------------------------------------------------------------ */
+
+.form-auth {
+    & {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: $white;
+        box-shadow: 0 10px 40px 0 rgba(62,57,107,.1), 0 2px 9px 0 rgba(62,57,107,.1);
+    }
+    .form__socials {
+        .button-google {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0;
+            border: 0;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
+        }
+        .button-twitter {
+            font-size: 0;
+            border: 0;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            background-color: #55ACEE;
+            svg {
+                fill: $white;
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+    .form__title {
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
+    .divider {
+        position: relative;
+        height: 2px;
+        background-color: #e8ebf3;
+    }
+    .divider:before {
+        content: 'or';
+        position: absolute;
+        left: 50%;
+        top: -9px;
+        transform: translateX(-50%);
+        padding: 0 .25rem;
+        background-color: $white;
+    }
+    .space {
+        padding: 5px;
+    }
+    .form__actions {
+        margin-top: 2rem;
+    }
+}
+
+/* ------------------------------------------------------------ *\
+	Form Contacts
+\* ------------------------------------------------------------ */
+.form-contacts {
+    max-width: 650px;
+    .from-group {
+        margin-bottom: 1rem;
+    }
+}
+
+@media #{$small-desktop} {
+    .form-contacts {
+        padding: 1rem;
+    }
+}
+
+/* ------------------------------------------------------------ *\
+	Form Chat
+\* ------------------------------------------------------------ */
+
+.form-chat {
+    & {
+        padding: 0 10px;
+    }
+    .input-group {
+        
+        .form-control {
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .btn {
+            padding: .5rem 1.5rem;
+            font-weight: 600;
+            font-size: 14px;
+        }
+    }
+}
+
+@media #{$mobile} {
+    .form-chat{
+        .input-group {
+            .form-control {
+                padding: 1rem;
+                margin-right: 10px;
+            }
+            .btn {
+                padding: .2rem 1rem;
+                font-weight: 400;
+                font-size: 12px;
+            }
+        }
+    }
+}

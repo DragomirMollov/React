@@ -1,0 +1,13 @@
+@import '../styles/variables.scss';
+
+.post {
+    & {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: .5rem 1.5rem;
+        min-height: 3.5rem;
+        background-color: $white;
+        border-bottom: 1px solid #e8ebf3;
+    }
+}
