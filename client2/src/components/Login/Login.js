@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import '../styles/login-register.scss'
+
 // import { useAuthContext } from "../../contexts/AuthContext";
 // import { useForm } from "../../hooks/useForm";
 

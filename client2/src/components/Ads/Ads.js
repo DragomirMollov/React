@@ -1,14 +1,14 @@
-import { CatalogItem } from "./CatalogItem/CatalogItem";
+import { AdsItem } from "./AdsItem/AdsItem";
 
 import './catalog.scss'
 
-export const Catalog = ({
+export const Ads = ({
     games,
 }) => {
     return (
         <section className="card" id="catalog-page">
             <h1 className="card-header">All Ads</h1>
-                <CatalogItem />
+                <AdsItem />
             {/* {games.map(x =>
                 <CatalogItem key={x._id} {...x} />
             )} */}
