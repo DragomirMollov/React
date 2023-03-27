@@ -21,10 +21,10 @@ export const Login = ({
     // }, onLoginSubmit);
 
     return (
-        <section id="login-page" className="auth">
+        <section id="login-section" className="auth">
              <form id="login" method="POST" > {/*onSubmit={onSubmit}*/}
                 <div className="container">
-                    <div className="brand-logo"></div>
+                    <div className="logo-login"></div>
                     <h1>Login</h1>
                     <label htmlFor="email">Email:</label>
                     <input
@@ -34,9 +34,9 @@ export const Login = ({
                         name={LoginFormKeys.Email}
                         // value={values[LoginFormKeys.Email]}
                         // onChange={changeHandler}
-                    />
+                    />``
 
-                    <label htmlFor="login-pass">Password:</label>
+                    <label htmlFor="pass">Password:</label>
                     <input
                         type="password"
                         id="login-password"

@@ -1,36 +1,58 @@
-#login-page {
+#login-section {
     position: relative;
-    margin: auto;
-    width: 500px;
+    // margin: auto;
+    margin: 50px auto;
+    // width: 400px;
+    width: 300px;
     height: auto;
     border-radius: 20px;
-    padding: 40px;
+    // padding: 40px;
+    padding: 30px;
     box-sizing: border-box;
     background: #3e4443;
-    box-shadow: 0px 0px 32px 0px #49535e, -14px -14px 20px #191c21;
+    //box-shadow: 0px 0px 32px 0px #49535e, -14px -14px 20px #191c21;
 }
 
-#register-page {
+#register-section {
     position: relative;
-    margin: auto;
-    width: 650px;
+    // margin: auto;
+    // width: 400px;
+    margin: 50px auto;
+    width: 300px;
     height: auto;
     border-radius: 20px;
-    padding: 40px;
+    //padding: 40px;
+    padding: 30px;
     box-sizing: border-box;
     background: #3e4443;
-    box-shadow: 0px 0px 32px 0px #49535e, -14px -14px 20px #191c21;
+    //box-shadow: 0px 0px 32px 0px #49535e, -14px -14px 20px #191c21;
 }
 
 .container {
-    padding: 40px;
+    //padding: 40px;
+    padding: 30px;
     margin: auto;
 }
 
-.brand-logo {
-    height: 100px;
-    width: 100px;
+.logo-login {
+    // height: 100px;
+    // width: 100px;
+    height: 80px;
+    width: 80px;
     background: url("../../images/register.png");
+    background-size: 100%;
+    margin: auto;
+    border-radius: 50%;
+    box-sizing: border-box;
+    box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+}
+.logo-register {
+    // height: 100px;
+    // width: 100px;
+    height: 80px;
+    width: 80px;
+    background: url("../../images/avatar.png");
+    background-size: 100%;
     margin: auto;
     border-radius: 50%;
     box-sizing: border-box;
@@ -38,14 +60,17 @@
 }
 
 .container>h1 {
-    margin-top: 15px;
+    // margin-top: 15px;
+    margin-top: 10px;
     font-weight: 900;
-    font-size: 2.7rem;
+    // font-size: 2.7rem;
+    font-size: 2rem;
     text-align: center;
     color: white;
     letter-spacing: 1px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    margin-bottom: 17px;
+    // margin-bottom: 17px;
+    margin-bottom: 15px;
 }
 
 label,
@@ -59,15 +84,19 @@ input {
 }
 
 label {
-    margin-bottom: 8px;
-    font-size: 27px;
+    //margin-bottom: 8px;
+    margin-bottom: 6px;
+    font-size: 22px;
+    //font-size: 27px;
     color: white;
-    margin-top: 13px;
+    //margin-top: 13px;
+    margin-top: 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 label:nth-of-type(2) {
-    margin-top: 20px;
+    //margin-top: 20px;
+    margin-top: 15px;
 }
 
 input::placeholder {
@@ -76,7 +105,8 @@ input::placeholder {
 
 
 label[for="female"] {
-    margin-top: 10px;
+    //margin-top: 10px;
+    margin-top: 5px;
 }
 
 input[type="nickname"],
@@ -84,11 +114,16 @@ input[type="password"],
 input[type="number"],
 input[type="email"] {
     background: #ecf0f3;
-    padding: 30px;
-    padding-left: 20px;
-    height: 50px;
-    margin-top: 10px;
-    font-size: 24px;
+    padding: 20px;
+    padding-left: 15px;
+    height: 40px;
+    margin-top: 5px;
+    font-size: 20px;
+    // padding: 30px;
+    // padding-left: 20px;
+    // height: 50px;
+    // margin-top: 10px;
+    // font-size: 24px;
     border-radius: 50px;
     box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
 }
@@ -98,16 +133,19 @@ label[for="terms"]>input {
 }
 
 .btn.submit {
-    margin-top: 30px;
+    //margin-top: 30px;
+    margin-top: 20px;
     background: #778e9c;
-    height: 60px;
+    height: 50px;
     border-radius: 20px;
+    // height: 60px;
     color: white;
-    font-size: 26px;
+    //font-size: 26px;
+    font-size: 22px;
     cursor: pointer;
     font-weight: 900;
-    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
-    transition: 0.5s;
+    //box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    //transition: 0.5s;
 }
 
 .btn.submit:hover {
@@ -117,14 +155,20 @@ label[for="terms"]>input {
 
 .container {
     text-align: left;
-    margin-top: 0px;
+    margin: auto;
+    
+    // margin-top: 0px;
+    // margin-bottom: 0px;
 }
 
 .field>span {
     position: absolute;
-    font-size: 18px;
-    bottom: 17px;
-    right: 8px;
+    font-size: 16px;
+    bottom: 13px;
+    right: 6px;
+    // font-size: 18px;
+    // bottom: 17px;
+    // right: 8px;
     text-decoration: none;
     color: black;
     background: rgb(235, 157, 142);

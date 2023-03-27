@@ -16,10 +16,10 @@ export const Register = () => {
     // }, onRegisterSubmit);
 
     return (
-        <section id="register-page" className="content auth">
+        <section id="register-section" className="content auth">
             <form id="register" method="post" > {/* onSubmit={onSubmit} */}
                 <div className="container">
-                    <div className="brand-logo"></div>
+                    <div className="logo-register"></div>
                     <h1>Register</h1>
 
                     <label htmlFor="email">Email:</label>
@@ -41,7 +41,7 @@ export const Register = () => {
                         // onChange={changeHandler}
                     />
 
-                    <label htmlFor="con-pass">Confirm Password:</label>
+                    <label htmlFor="confirmPass">Confirm Password:</label>
                     <input
                         type="password"
                         name="confirmPassword"
