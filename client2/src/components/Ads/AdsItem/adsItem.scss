@@ -1,0 +1,22 @@
+.card {
+    & {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .card-header {
+        & {
+            border-radius: 0;
+            flex: 0 1 33.33%;
+            cursor: pointer;
+        }
+        a {
+            display: flex;
+            align-items: center;
+            
+        }
+        .item-name {
+            margin-left: 5px;
+        }
+    }
+}

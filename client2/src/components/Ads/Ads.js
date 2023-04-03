@@ -1,21 +1,23 @@
+import { useAdsContext } from "../../contexts/AdsContext";
+
 import { AdsItem } from "./AdsItem/AdsItem";
 
-import './catalog.scss'
+import './ads.scss'
 
-export const Ads = ({
-    games,
-}) => {
+export const Ads = () => {
+    const { ads } = useAdsContext();
+
     return (
         <section className="card" id="catalog-page">
             <h1 className="card-header">All Ads</h1>
-                <AdsItem />
-            {/* {games.map(x =>
-                <CatalogItem key={x._id} {...x} />
-            )} */}
+            
+            {ads.map(x =>
+                <AdsItem key={x._id} {...x} />
+            )}
 
-            {/* {games.length === 0 && ( */}
+            {ads.length === 0 && (
                 <h3 className="no-articles">No ads yet</h3>
-            {/* )} */}
+            )}
         </section>
     );
 };

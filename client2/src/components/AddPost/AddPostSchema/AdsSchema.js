@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 
 import { FormikController } from '../../../utils/PostSchema/FormikController';
-import { Items } from '../../../utils/Items/Items';
+// import { Items } from '../../../utils/Items/Items';
+import { AddComment } from '../../AdsDetails/addComemnt/AddComment'
 
 import '../../styles/Sections.scss';
 import '../../styles/Forms.scss';
@@ -10,9 +11,10 @@ import '../../styles/Card.scss';
 
 import bannerImage from '../../../images/banner.jpg';
 
-export const PostSchema = ({
+export const AdsSchema = ({
   initialValues = {
     title: '',
+    category: '',
     image: '',
     location: '',
     date: '',
@@ -28,8 +30,8 @@ export const PostSchema = ({
     backgroundImage: `url(${bannerImage})`,
   },
 }) => {
-  let { title, image, price, description, date, location, phoneNumber, creator, posts, viewCount } = initialValues;
-  let items = Items;
+  let { title, image, price, description, date, location, phoneNumber,  posts } = initialValues;
+  // let items = Items;
   const postImage = {
     width: '100%',
     backgroundPosition: 'center center',
@@ -48,18 +50,18 @@ export const PostSchema = ({
       <div style={imageBackground}>
         {posts.length ? (
           <div className='section-results'>
-            <div className='container'>
+            {/* <div className='container'>
               <h3 className='mb-4 h3'>{posts.length ? `Found ${posts.length} ads` : ''}</h3>
-              {/* {posts ? (
+              {posts ? (
                 <ul>
                   {posts.map((item) => (
-                    <li key={item._id}>{...item}</li>
+                    <li key={item._id}>{...items}</li>
                   ))}
                 </ul>
               ) : (
                 ''
-              )} */}
-            </div>
+              )}
+            </div> */}
           </div>
         ) : (
           ''
@@ -104,7 +106,7 @@ export const PostSchema = ({
                   </div>
                 </div>
 
-                {/* <Comment phoneNumber={ phoneNumber }/> */}
+                <AddComment phoneNumber={ phoneNumber }/>
               </div>
             </div>
           </div>

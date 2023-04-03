@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from 'react';
+import { createContext, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 
@@ -20,7 +20,7 @@ export const AuthProvider = ({
 
             setAuth(result);
 
-            navigate('/catalog');
+            navigate('/ads');
         } catch (error) {
             console.log('There is a problem');
         }
@@ -37,7 +37,7 @@ export const AuthProvider = ({
 
             setAuth(result);
 
-            navigate('/catalog');
+            navigate('/ads');
         } catch (error) {
             console.log('There is a problem');
         }
