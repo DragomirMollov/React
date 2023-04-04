@@ -9,7 +9,7 @@ export const Ads = () => {
 
     return (
         <section className="card" id="catalog-page">
-            <h1 className="card-header">All Ads</h1>
+            <h1>All Ads</h1>
             
             {ads.map(x =>
                 <AdsItem key={x._id} {...x} />

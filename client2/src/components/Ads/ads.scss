@@ -11,30 +11,31 @@
         // align-items: center;
         // margin-bottom: 1.5em;
     }
-    // .card-header {
-    //     & {
-    //         display: flex;
-    //         align-items: center;
-    //         padding: .5rem 1.5rem;
-    //         min-height: 3.5rem;
-    //         background-color: $white;
-    //         border-bottom: 1px solid #e8ebf3;
-    //     } 
-    //     .card-title {
-    //         font-size: 18px;
-    //         font-weight: 500;
-    //     }
-    // }
-    // .card-description {
-    //     font-family: 'Roboto';
-    //     font-size: 14px;
-    //     color: inherit;
-    //     white-space: pre-line;
-    //     word-break: break-all;
-    // }
-    // .card-footer {
-    //     background-color: $white;
-    // }
+    .card-header {
+        & {
+            display: flex;
+            align-items: center;
+            padding: .5rem 1.5rem;
+            min-height: 3.5rem;
+            background-color: $white;
+            border-bottom: 1px solid #e8ebf3;
+            text-decoration-color: #161618;
+        } 
+        .card-title {
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+    .card-description {
+        font-family: 'Roboto';
+        font-size: 14px;
+        color: inherit;
+        white-space: pre-line;
+        word-break: break-all;
+    }
+    .card-footer {
+        background-color: $white;
+    }
 }
 
 #catalog-page {
@@ -105,8 +106,9 @@
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
     color: #fff;
     font-size: 20px;
-    position: absolute;
+    position: flex;
     bottom: 30px;
+    text-decoration: none;
     text-align: left;
     letter-spacing: 1px;
     padding: 10px;

@@ -25,7 +25,7 @@ export const AdsItem = ({
                 <p>{location}</p>
                 <p>{email}</p>
                 <p>{condition}</p></div>
-                <Link to={`/catalog/${_id}`} className="details-button">Details</Link>
+                <Link to={`/ads/${_id}`} className="details-button">Details</Link>
             </div>
         </div>
 

@@ -17,7 +17,7 @@ export const AdsProvider = ({
             .then(result => {
                 setAds(result)
             })
-    }, [adsService]);
+    }, []);
 
     const onCreateAdsSubmit = async (data) => {
         const newAds = await adsService.create(data);

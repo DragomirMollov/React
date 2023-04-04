@@ -28,7 +28,7 @@ export const AuthProvider = ({
 
     const onRegisterSubmit = async (values) => {
         const { confirmPassword, ...registerData } = values;
-        if (confirmPassword !== registerData.password) {
+        if (confirmPassword !== registerData.pswd) {
             return;
         }
 
@@ -56,6 +56,7 @@ export const AuthProvider = ({
         userId: auth._id,
         token: auth.accessToken,
         userEmail: auth.email,
+        userName: auth.txt,
         isAuthenticated: !!auth.accessToken,
     };
 
