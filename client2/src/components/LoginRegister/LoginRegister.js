@@ -1,7 +1,9 @@
 import React from "react";
 import { useForm } from "../../hooks/useForm";
 import "../styles/login.scss";
-import { useAuthContext } from "../../contexts/AuthContext";
+import { AuthContext } from "../../contexts/AuthContext";
+import { useContext } from "react";
+
 
 const LoginFormKeys = {
   Email: "email",
@@ -9,22 +11,20 @@ const LoginFormKeys = {
 };
 
 const RegsterFormKeys = {
-  email: "registerEmail",
+  email: "registerEail",
   pswd: "registerPassword",
   confirmPassword: "confirmPassword",
   userName: "registerUserName",
 };
 
 export const LoginRegister = () => {
-  const { onLoginSubmit, onRegisterSubmit } = useAuthContext();
+  const { onLoginSubmit, onRegisterSubmit } = useContext(AuthContext);;
 
   const { values, changeHandler, onSubmit } = useForm(
     {
       [LoginFormKeys.Email]: "",
       [LoginFormKeys.Password]: "",
-    },
-    onLoginSubmit
-  );
+    }, onLoginSubmit);
 
   const {
     values: registerValues,
@@ -36,15 +36,13 @@ export const LoginRegister = () => {
       [RegsterFormKeys.email]: "",
       [RegsterFormKeys.pswd]: "",
       [RegsterFormKeys.confirmPassword]: "",
-    },
-    onRegisterSubmit
-  );
+    }, onRegisterSubmit);
 
   return (
     <div className="main">
       <input type="checkbox" id="chk" aria-hidden="true" />
       <div className="signup">
-        <form>
+        <form method="post">
           <label htmlFor="chk" aria-hidden="true">
             Sign up
           </label>
@@ -87,7 +85,7 @@ export const LoginRegister = () => {
       </div>
 
       <div className="login">
-        <form>
+        <form method="post">
           <label htmlFor="chk" aria-hidden="true">
             Login
           </label>
