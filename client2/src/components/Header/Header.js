@@ -12,6 +12,7 @@ export const Header = () => {
   const { isAuthenticated, userName } = useContext(AuthContext);
   console.log(isAuthenticated);
   console.log(userName);
+  console.log(AuthContext)
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -26,10 +27,14 @@ export const Header = () => {
             <Nav.Link href="/ads">Ads</Nav.Link>
 
             {isAuthenticated && (
+              <>
+              <div>
+                <Nav.Link href="/create-ads">Place Ad</Nav.Link>
+              </div>
               <div>
                 <span>{userName}</span>
-                <Nav.Link href="/addPost">Place Ad</Nav.Link>
               </div>
+              </>
             )}
 
             <NavDropdown title="My Profile" id="basic-nav-dropdown">

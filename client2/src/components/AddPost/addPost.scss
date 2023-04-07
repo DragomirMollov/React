@@ -2,15 +2,15 @@
 @import '../styles/variables.scss';
 
 /* Style for posts */
-// .post {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   padding: .5rem 1.5rem;
-//   min-height: 3.5rem;
-//   background-color: $white;
-//   border-bottom: 1px solid #e8ebf3;
-// }
+.post {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  // padding: .5rem 1.5rem;
+  // min-height: 3.5rem;
+  // background-color: $white;
+  // border-bottom: 1px solid #e8ebf3;
+}
 
 /* Style for create/edit page */
 #create-page,
