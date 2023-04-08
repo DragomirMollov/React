@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useAdsContext } from "../../contexts/AdsContext";
 
-import { AdsSchema } from '../AddPost/AddPostSchema/AdsSchema';
-
 import { useForm } from "../../hooks/useForm";
 import { useService } from "../../hooks/useService";
 import { adsServiceFactory } from "../../services/adsService";
@@ -13,7 +11,15 @@ export const EditAds = () => {
     const { adsId } = useParams();
     const adsService = useService(adsServiceFactory);
     const { values, changeHandler, onSubmit, changeValues } = useForm({
-        AdsSchema 
+        _id: '',
+        title: '',
+        category: '',
+        location: '',
+        phoneNumber: '',
+        imageUrl: '',
+        price: 0,
+        description: '',
+        creator: '',
     }, onAdsEditSubmit);
 
     useEffect(() => {
@@ -21,14 +27,16 @@ export const EditAds = () => {
             .then(result => {
                 changeValues(result);
             });
-    }, [adsId, adsService, changeValues]);
+    }, [adsId]);
+
+    
 
     return (
         <section id="edit-page" className="auth">
-            <form id="edit" method="post" onSubmit={onSubmit}>
+             <form id="edit" method="post" onSubmit={onSubmit}>
                 <div className="container">
 
-                    <h1>Edit Ads</h1>
+                   <h1>Edit Ads</h1>
                     <label htmlFor="leg-title">Title:</label>
                     <input
                         type="text"
@@ -38,7 +46,7 @@ export const EditAds = () => {
                         onChange={changeHandler}
                     />
 
-                    <label htmlFor="leg-category">Category:</label>
+                   <label htmlFor="leg-category">Category:</label>
                     <input
                         type="text"
                         id="category"
@@ -47,7 +55,7 @@ export const EditAds = () => {
                         onChange={changeHandler}
                     />
 
-                    <label htmlFor="leg-location">Location:</label>
+                    <label htmlFor="leg-location">Location:</label> 
                     <input
                         type="text"
                         id="location"
@@ -56,14 +64,14 @@ export const EditAds = () => {
                         onChange={changeHandler}
                     />
 
-                    <label htmlFor="leg-phoneNumber">PhoneNumber:</label>
+                    {/* <label htmlFor="leg-phoneNumber">Phone Number:</label>
                     <input
-                        type="number"
+                        type="text"
                         id="phoneNumber"
                         name="phoneNumber"
                         value={values.phoneNumber}
                         onChange={changeHandler}
-                    />
+                    /> */}
 
                     <label htmlFor="ads-img">Image:</label>
                     <input
@@ -74,7 +82,7 @@ export const EditAds = () => {
                         onChange={changeHandler}
                     />
 
-                    <label htmlFor="leg-price">price:</label>
+                    <label htmlFor="leg-price">Price:</label>
                     <input
                         type="number"
                         id="price"
@@ -84,17 +92,24 @@ export const EditAds = () => {
                     />
 
                     <label htmlFor="description">Description:</label>
-                    <textarea name="description" id="description" value={values.description} onChange={changeHandler}></textarea>
+                    <textarea 
+                    name="description" 
+                    id="description" 
+                    value={values.description} 
+                    onChange={changeHandler}>
+                    </textarea>
 
                     <label htmlFor="creator">Creator:</label>
-                    <textarea name="creator" id="creator" value={values.creator} onChange={changeHandler}></textarea>
+                    <textarea 
+                    name="creator" 
+                    id="creator" 
+                    value={values.creator} 
+                    onChange={changeHandler}>   
+                    </textarea>
 
-                    <label htmlFor="leg-date">Date:</label>
-                    <span><span>{new Date(values.date).toLocaleDateString('en-US', 'short')}</span></span>
-                    <input className="btn submit" type="submit" value="Edit Ads" />
-
+                    <input className="btn submit" type="submit" value="Edit Game" style={{padding: "inherit"}} />
                 </div>
-            </form>
+            </form> 
         </section>
     );
 };

@@ -47,25 +47,6 @@ export const AdsSchema = ({
   return (
     <Fragment>
         <FormikController>
-      <div style={imageBackground}>
-        {posts.length ? (
-          <div className='section-results'>
-            {/* <div className='container'>
-              <h3 className='mb-4 h3'>{posts.length ? `Found ${posts.length} ads` : ''}</h3>
-              {posts ? (
-                <ul>
-                  {posts.map((item) => (
-                    <li key={item._id}>{...items}</li>
-                  ))}
-                </ul>
-              ) : (
-                ''
-              )}
-            </div> */}
-          </div>
-        ) : (
-          ''
-        )}
 
         <section className='section-post-details'>
           <div className='container'>
@@ -111,7 +92,6 @@ export const AdsSchema = ({
             </div>
           </div>
         </section>
-      </div>
       </FormikController>
     </Fragment>
   );

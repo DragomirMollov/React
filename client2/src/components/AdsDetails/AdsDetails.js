@@ -12,7 +12,7 @@ import { useAdsContext } from '../../contexts/AdsContext';
 
 export const AdsDetails = () => {
     const { adsId } = useParams();
-    const { userId, isAuthenticated, userEmail } = useAuthContext();
+    const { userId, isAuthenticated, userEmail, userName } = useAuthContext();
     const { deleteAds } = useAdsContext();
     const [ads, dispatch] = useReducer(adsReducer, {});
     const adsService = useService(adsServiceFactory)
@@ -39,6 +39,7 @@ export const AdsDetails = () => {
             type: 'COMMENT_ADD',
             payload: response,
             userEmail,
+            userName,
         });
     };
 
@@ -76,7 +77,7 @@ export const AdsDetails = () => {
                     <ul>
                         {ads.comments && ads.comments.map(x => (
                             <li key={x._id} className="comment">
-                                <p>{x.author.email}: {x.comment}</p>
+                                <p>{x.author.userName ? x.author.userName : x.author.email}: {x.comment}</p>
                             </li>
                         ))}
                     </ul>

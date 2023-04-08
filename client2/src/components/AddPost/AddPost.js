@@ -14,7 +14,7 @@ export const AddAds = () => {
         location: '',
         phoneNumber: '',
         imageUrl: '',
-        price: '',
+        price: 0,
         description: '',
         creator: '',
         date: '',
@@ -37,7 +37,7 @@ export const AddAds = () => {
                     <input value={values.location} onChange={changeHandler} type="text" id="location" name="location" placeholder="Enter ads location..." />
 
                     <label htmlFor="phoneNumber">PhoneNumber:</label>
-                    <input value={values.phoneNumber} onChange={changeHandler} type="number" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" />
+                    <input value={values.phoneNumber} onChange={changeHandler} type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" />
 
                     <label htmlFor="ads-img">Image:</label>
                     <input value={values.imageUrl} onChange={changeHandler} type="text" id="imageUrl" name="imageUrl" placeholder="Upload a photo..." />
@@ -55,7 +55,7 @@ export const AddAds = () => {
                     <label htmlFor='date'>Date:</label>
                     <span>{new Date(values.date).toLocaleDateString('en-US', 'short')}</span>
 
-                    <input className="btn submit" type="submit" value="Create Ads" />
+                    <input className="btn submit" type="submit" value="Create Ads" style={{padding: "inherit"}}/>
                 </div>
             </form>
         </section>
