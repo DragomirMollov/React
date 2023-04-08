@@ -59,7 +59,6 @@ export const AuthProvider = ({
         userName: auth.userName,
         isAuthenticated: !!auth.accessToken,
     };
-    console.log(auth.userName)
 
     return (
         <>

@@ -10,9 +10,7 @@ import homeBackground from "../../images/banner.jpg";
 
 export const Header = () => {
   const { isAuthenticated, userName } = useContext(AuthContext);
-  // console.log(isAuthenticated);
-  // console.log(userName);
-  // console.log(AuthContext)
+  
   return (
     <Navbar bg="light" expand="lg">
       <Container>

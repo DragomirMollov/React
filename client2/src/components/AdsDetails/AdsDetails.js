@@ -27,14 +27,14 @@ export const AdsDetails = () => {
                 ...adsData,
                 comments,
             };
-            
+           
             dispatch({type: 'ADS_FETCH', payload: adsState})
         });
     }, [adsId]);
 
     const onCommentSubmit = async (values) => {
         const response = await commentService.create(adsId, values.comment);
-
+        
         dispatch({
             type: 'COMMENT_ADD',
             payload: response,
@@ -66,11 +66,19 @@ export const AdsDetails = () => {
                 <div className="ads-header">
                     <img className="ads-img" src={ads.imageUrl} alt=''/>
                     <h1>{ads.title}</h1>
-                    <span className="categoru">Category: {ads.category}</span>
+                    <span className="category">Category:</span>
                     <p className="type">{ads.category}</p>
+                    <span className="creator">Creator:</span>
+                    <p className="type">{ads.creator}</p>
                 </div>
 
-                <p className="text">{ads.description}</p>
+                <p className="text">Description: {ads.description}</p>
+                <p className="text">Price: {ads.price}</p>
+                <p className="text">Phone Number: {ads.phoneNumber}</p>
+                <p className="text">Location: {ads.location}</p>
+                <p className="text">Email: {ads.userEmail}</p>
+                <p className="text">Condition: {ads.condition}</p>
+                <p className="text">Date: {ads.date}</p>
 
                 <div className="details-comments">
                     <h2>Comments:</h2>

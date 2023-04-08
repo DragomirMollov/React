@@ -12,6 +12,7 @@ export const adsReducer = (state, action) => {
                         ...action.payload,
                         author: {
                             email: action.userEmail,
+                            userName: action.userName,
                         }
                     }
                 ],

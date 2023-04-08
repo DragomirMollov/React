@@ -1,6 +1,5 @@
 import { useAdsContext } from '../../contexts/AdsContext';
 
-// import { AdsSchema } from './AddPostSchema/AdsSchema';
 import './addPost.scss'
 import { useForm } from '../../hooks/useForm';
 
@@ -15,10 +14,10 @@ export const AddAds = () => {
         phoneNumber: '',
         imageUrl: '',
         price: 0,
+        condition: '',
         description: '',
         creator: '',
         date: '',
-        // AdsSchema
     }, onCreateAdsSubmit);
     return (
         
@@ -44,18 +43,18 @@ export const AddAds = () => {
 
                     <label htmlFor="price">Price:</label>
                     <input value={values.price} onChange={changeHandler} type="number" id="price" name="price" placeholder="Add your asking price" />
+                    
+                    <label htmlFor="condition">Condition:</label>
+                    <input value={values.condition} onChange={changeHandler} type="text" id="condition" name="condition" placeholder="New, Like New, Used in good condition" />
 
 
                     <label htmlFor="description">Description:</label>
                     <textarea value={values.description} onChange={changeHandler} name="description" id="description" ></textarea>
 
-                    <label htmlFor="creator">Creator:</label>
-                    <textarea value={values.creator} onChange={changeHandler} name="creator" id="creator"  placeholder='Add your name, email, or any necessary info '></textarea>
-
                     <label htmlFor='date'>Date:</label>
-                    <span>{new Date(values.date).toLocaleDateString('en-US', 'short')}</span>
+                    <input value={new Date().toLocaleDateString('en-US', 'short')} onChange={changeHandler} type="text" id="date" name="date" />
 
-                    <input className="btn submit" type="submit" value="Create Ads" style={{padding: "inherit"}}/>
+                    <input className="btn submit" type="submit" value="Create Ads" />
                 </div>
             </form>
         </section>

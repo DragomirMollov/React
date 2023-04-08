@@ -18,8 +18,10 @@ export const EditAds = () => {
         phoneNumber: '',
         imageUrl: '',
         price: 0,
+        condition: '',
         description: '',
         creator: '',
+        date: '',
     }, onAdsEditSubmit);
 
     useEffect(() => {
@@ -64,14 +66,14 @@ export const EditAds = () => {
                         onChange={changeHandler}
                     />
 
-                    {/* <label htmlFor="leg-phoneNumber">Phone Number:</label>
-                    <input
-                        type="text"
-                        id="phoneNumber"
-                        name="phoneNumber"
-                        value={values.phoneNumber}
-                        onChange={changeHandler}
-                    /> */}
+                    <label htmlFor="phoneNumber">PhoneNumber:</label>
+                    <input  
+                    type="text" 
+                    id="phoneNumber" 
+                    name="phoneNumber" 
+                    value={values.phoneNumber} 
+                    onChange={changeHandler} 
+                    />
 
                     <label htmlFor="ads-img">Image:</label>
                     <input
@@ -90,6 +92,14 @@ export const EditAds = () => {
                         value={values.price}
                         onChange={changeHandler}
                     />
+                    <label htmlFor="leg-condition">Condition:</label>
+                    <input
+                        type="text"
+                        id="condition"
+                        name="condition"
+                        value={values.condition}
+                        onChange={changeHandler}
+                    />
 
                     <label htmlFor="description">Description:</label>
                     <textarea 
@@ -106,6 +116,15 @@ export const EditAds = () => {
                     value={values.creator} 
                     onChange={changeHandler}>   
                     </textarea>
+
+                    <label htmlFor='date'>Date:</label>
+                    <input 
+                    value={new Date().toLocaleDateString('en-US', 'short')} 
+                    onChange={changeHandler} 
+                    type="text" 
+                    id="date" 
+                    name="date" 
+                    />
 
                     <input className="btn submit" type="submit" value="Edit Game" style={{padding: "inherit"}} />
                 </div>

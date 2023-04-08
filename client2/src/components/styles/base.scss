@@ -67,7 +67,8 @@ ul:last-child,
 ol:last-child,
 dl:last-child,
 table:last-child,
-blockquote:last-child { margin-bottom: 0; }
+blockquote:last-child {     margin-bottom: 20px;
+    margin-top: 30px; }
 
 .fade:not(.show) {
 	display: none !important;
