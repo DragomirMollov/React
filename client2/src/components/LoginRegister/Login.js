@@ -21,7 +21,7 @@ export const Login = () => {
         <div className="main">  	
             <input type="checkbox" id="chk" aria-hidden="true" />
                 <div className="login">
-                    <form method="POST">
+                    <form method="POST" onSubmit={onSubmit}>
                         <label htmlFor="chk" aria-hidden="true">Login</label>
                         <input 
                         type="email"
@@ -37,7 +37,7 @@ export const Login = () => {
                         value={values[LoginFormKeys.Password]}
                         onChange={changeHandler}
                         />
-                        <button onClick={onSubmit}>Login</button>
+                        <button>Login</button>
                     </form>
                 </div>
         </div>

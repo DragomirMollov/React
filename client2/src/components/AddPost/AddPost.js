@@ -53,7 +53,7 @@ export const AddAds = () => {
                     <textarea value={values.creator} onChange={changeHandler} name="creator" id="creator"  placeholder='Add your name, email, or any necessary info '></textarea>
 
                     <label htmlFor='date'>Date:</label>
-                    <input value={values.date} onChange={changeHandler} type="text" name='date' id='date'  placeholder='Enter date of creation' />
+                    <span>{new Date(values.date).toLocaleDateString('en-US', 'short')}</span>
 
                     <input className="btn submit" type="submit" value="Create Ads" />
                 </div>

@@ -9,7 +9,7 @@ export const Register = () => {
     const { onRegisterSubmit } = useContext(AuthContext);
     const { values, changeHandler, onSubmit } = useForm({
         email: '',
-        pswd: '',
+        password: '',
         confirmPassword: '',
         userName: '',
     }, onRegisterSubmit);
@@ -19,7 +19,7 @@ export const Register = () => {
         <div className="main">  	
             <input type="checkbox" id="chk" aria-hidden="true" />
                 <div className="signup">
-                    <form method="POST">
+                    <form method="POST" onSubmit={onSubmit}>
                         <label htmlFor="chk" aria-hidden="true">Sign up</label>
                         <input 
                         type="text" 
@@ -39,7 +39,7 @@ export const Register = () => {
 
                         <input 
                         type="password" 
-                        name="pswd" 
+                        name="password" 
                         placeholder="Password" 
                         value={values.pswd}
                         onChange={changeHandler} 
@@ -52,7 +52,7 @@ export const Register = () => {
                         value={values.confirmPassword}
                         onChange={changeHandler}
                         />
-                        <button  onClick={onSubmit}>Sign up</button>
+                        <button>Sign up</button>
                     </form>
                 </div>
         </div>  

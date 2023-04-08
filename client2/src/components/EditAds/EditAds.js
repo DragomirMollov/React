@@ -90,13 +90,7 @@ export const EditAds = () => {
                     <textarea name="creator" id="creator" value={values.creator} onChange={changeHandler}></textarea>
 
                     <label htmlFor="leg-date">Date:</label>
-                    <input
-                        type="text"
-                        id="date"
-                        name="date"
-                        value={values.date}
-                        onChange={changeHandler}
-                    />
+                    <span><span>{new Date(values.date).toLocaleDateString('en-US', 'short')}</span></span>
                     <input className="btn submit" type="submit" value="Edit Ads" />
 
                 </div>

@@ -10,9 +10,9 @@ import { AdsProvider } from './contexts/AdsContext';
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { Home } from "./components/Home/Home";
-import { LoginRegister } from "./components/LoginRegister/LoginRegister";
-// import { Login } from "./components/LoginRegister/Login";
-// import { Register } from "./components/Register/Register";
+//import { LoginRegister } from "./components/LoginRegister/LoginRegister";
+import { Login } from "./components/LoginRegister/Login";
+import { Register } from "./components/Register/Register";
 import { Logout } from "./components/Logout/Logout";
 import { AddAds } from "./components/AddPost/AddPost";
 import { Ads } from "./components/Ads/Ads";
@@ -31,9 +31,8 @@ function App() {
               <main id="main-content">
                   <Routes>
                       <Route path='/' element={<Home />} />
-                      <Route path='/login_register' element={<LoginRegister />} />
-                      {/* <Route path='/login_register' element={<Login />} />
-                      <Route path='/login_register' element={<Register />} /> */}
+                      <Route path='/login' element={<Login />} />
+                      <Route path='/register' element={<Register />} />
                       <Route path='/ads' element={<Ads />} />
                       <Route path='/ads/:adsId' element={<AdsDetails />} />
 

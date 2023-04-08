@@ -30,7 +30,7 @@ export const AdsDetails = () => {
             
             dispatch({type: 'ADS_FETCH', payload: adsState})
         });
-    }, [adsId, adsService]);
+    }, [adsId]);
 
     const onCommentSubmit = async (values) => {
         const response = await commentService.create(adsId, values.comment);

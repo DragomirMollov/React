@@ -10,9 +10,9 @@ import homeBackground from "../../images/banner.jpg";
 
 export const Header = () => {
   const { isAuthenticated, userName } = useContext(AuthContext);
-  console.log(isAuthenticated);
-  console.log(userName);
-  console.log(AuthContext)
+  // console.log(isAuthenticated);
+  // console.log(userName);
+  // console.log(AuthContext)
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -32,7 +32,7 @@ export const Header = () => {
                 <Nav.Link href="/create-ads">Place Ad</Nav.Link>
               </div>
               <div>
-                <span>{userName}</span>
+                <span id="UserName">{userName}</span>
               </div>
               </>
             )}
@@ -40,8 +40,15 @@ export const Header = () => {
             <NavDropdown title="My Profile" id="basic-nav-dropdown">
               {!isAuthenticated && (
                 <div>
-                  <NavDropdown.Item href="/login_register">
-                    Login / Sign Up
+                  <NavDropdown.Item href="/login">
+                    Login
+                  </NavDropdown.Item>
+                </div>
+              )}
+              {!isAuthenticated && (
+                <div>
+                  <NavDropdown.Item href="/register">
+                   Sign Up
                   </NavDropdown.Item>
                 </div>
               )}
