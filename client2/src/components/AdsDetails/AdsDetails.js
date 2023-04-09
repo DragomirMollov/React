@@ -64,7 +64,7 @@ export const AdsDetails = () => {
             <div className="info-section">
 
                 <div className="ads-header">
-                    <img className="ads-img" src={ads.imageUrl} alt=''/>
+                    <img className="ads-img" src={ads.imageUrl} alt='' style={{width: "50%"}} />
                     <h1>{ads.title}</h1>
                     <span className="category">Category:</span>
                     <p className="type">{ads.category}</p>
