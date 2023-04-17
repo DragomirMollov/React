@@ -1,11 +1,9 @@
 import { useAdsContext } from '../../contexts/AdsContext';
-
 import './addPost.scss'
 import { useForm } from '../../hooks/useForm';
 
-
 export const AddAds = () => {
-    const {onCreateAdsSubmit} = useAdsContext();
+    const { onCreateAdsSubmit, errorMessage } = useAdsContext();
 
     const { values, changeHandler, onSubmit } = useForm({
         title: '',
@@ -19,11 +17,11 @@ export const AddAds = () => {
         creator: '',
         date: '',
     }, onCreateAdsSubmit);
+
     return (
-        
         <section id="create-page" className="auth">
             <form id="create" method="post" onSubmit={onSubmit}>
-            <div className="post">
+                <div className="post">
                     <h1>Add Post</h1> 
 
                     <label htmlFor="title">Title:</label>
@@ -47,12 +45,13 @@ export const AddAds = () => {
                     <label htmlFor="condition">Condition:</label>
                     <input value={values.condition} onChange={changeHandler} type="text" id="condition" name="condition" placeholder="New, Like New, Used in good condition" />
 
-
                     <label htmlFor="description">Description:</label>
                     <textarea value={values.description} onChange={changeHandler} name="description" id="description" ></textarea>
 
                     <label htmlFor='date'>Date:</label>
                     <input value={new Date().toLocaleDateString('en-US', 'short')} onChange={changeHandler} type="text" id="date" name="date" />
+
+                    {errorMessage && <p>{errorMessage}</p>}
 
                     <input className="btn submit" type="submit" value="Create Ads" />
                 </div>
