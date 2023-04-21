@@ -1,15 +1,18 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useAdsContext } from "../../contexts/AdsContext";
+import { useAuthContext } from '../../contexts/AuthContext'
 
 import { useForm } from "../../hooks/useForm";
 import { useService } from "../../hooks/useService";
 import { adsServiceFactory } from "../../services/adsService";
 
 export const EditAds = () => {
-    const { onAdsEditSubmit } = useAdsContext();
+    const { onAdsEditSubmit, errorMessage } = useAdsContext();
     const { adsId } = useParams();
     const adsService = useService(adsServiceFactory);
+    const { userName, userEmail } = useAuthContext();
+
     const { values, changeHandler, onSubmit, changeValues } = useForm({
         _id: '',
         title: '',
@@ -20,8 +23,8 @@ export const EditAds = () => {
         price: 0,
         condition: '',
         description: '',
-        creator: '',
-        date: '',
+        creator: userName || userEmail,
+        date: new Date().toLocaleDateString('en-US', 'short'),
     }, onAdsEditSubmit);
 
     useEffect(() => {
@@ -109,24 +112,9 @@ export const EditAds = () => {
                     onChange={changeHandler}>
                     </textarea>
 
-                    <label htmlFor="creator">Creator:</label>
-                    <textarea 
-                    name="creator" 
-                    id="creator" 
-                    value={values.creator} 
-                    onChange={changeHandler}>   
-                    </textarea>
+                    {errorMessage && <p>{errorMessage}</p>}
 
-                    <label htmlFor='date'>Date:</label>
-                    <input 
-                    value={new Date().toLocaleDateString('en-US', 'short')} 
-                    onChange={changeHandler} 
-                    type="text" 
-                    id="date" 
-                    name="date" 
-                    />
-
-                    <input className="btn submit" type="submit" value="Edit Game" style={{padding: "inherit"}} />
+                    <input className="btn submit" type="submit" value="Edit Ads" style={{padding: "inherit"}} />
                 </div>
             </form> 
         </section>
